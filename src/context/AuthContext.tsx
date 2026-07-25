@@ -294,9 +294,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
           return { success: true };
         }
-      } catch (authError: any) {
-        console.warn('Supabase Auth signup failed or offline, falling back to LocalStorage:', authError);
-      }
+   } catch (authError: any) {
+  console.error("SUPABASE SIGNUP ERROR:", authError);
+
+  return {
+    success: false,
+    error: authError?.message || JSON.stringify(authError),
+  };
+}
 
       // 2. Local fallback for testing/demo mode
       if (typeof window !== 'undefined') {
