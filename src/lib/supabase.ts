@@ -1,23 +1,46 @@
 import { createClient } from '@supabase/supabase-js';
 
+// Supabase Environment Variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabasePublishableKey =
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  '';
 
-// standard supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: true,
-  },
-});
+// Validate environment variables
+if (!supabaseUrl) {
+  console.error('❌ Missing NEXT_PUBLIC_SUPABASE_URL');
+}
 
-// helper to get supabase client with cookies or context if running server-side
-export const getSupabaseServer = () => {
-  // If we are running server-side, we can fetch from process.env, which is standard
-  return createClient(supabaseUrl, supabaseAnonKey, {
+if (!supabasePublishableKey) {
+  console.error(
+    '❌ Missing NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (or NEXT_PUBLIC_SUPABASE_ANON_KEY)'
+  );
+}
+
+// Client for Browser
+export const supabase = createClient(
+  supabaseUrl,
+  supabasePublishableKey,
+  {
     auth: {
-      persistSession: false,
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
     },
-  });
+  }
+);
+
+// Client for Server
+export const getSupabaseServer = () => {
+  return createClient(
+    supabaseUrl,
+    supabasePublishableKey,
+    {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    }
+  );
 };
