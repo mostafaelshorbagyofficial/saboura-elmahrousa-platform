@@ -1,0 +1,22 @@
+[
+  {
+    "appended_at": "2026-07-25T16:52:18.776Z",
+    "sheet_url": "https://docs.google.com/spreadsheets/d/default/edit",
+    "row_data": {
+      "timestamp": "2026-07-25T16:52:18.436Z",
+      "volunteer": "Mostafa",
+      "phone": "01000374485",
+      "center": "مركز بنها",
+      "date": "2026-07-25",
+      "time": "19:51:00",
+      "boards_received": 1,
+      "boards_installed": 1,
+      "boards_returned": 0,
+      "accepted_restaurants_count": 1,
+      "rejected_restaurants_count": 0,
+      "accepted_restaurant_names": "بصيب",
+      "rejected_restaurant_names": "",
+      "notes": "سشقليئللشيس"
+    }
+  }
+]
