@@ -1,5 +1,12 @@
 # صبورة المحروسة | Saboura El Mahrousa
 
+![Live Preview](./public/preview.jpg)
+
+🌐 **Live Production Deployment:** [saboura-elmahrousa-platform.vercel.app](https://saboura-elmahrousa-platform.vercel.app)  
+👨‍💻 **Engineering & Execution:** [Mostafa Mohamed Farhat (Elshorbagy)](https://mostafa-portfolio-iota.vercel.app/) — *Volunteer Coordinator & Full-Stack Tech Lead (Life Makers Foundation — Qalyubia)*
+
+---
+
 منصة رقمية متكاملة لإدارة ومتابعة مبادرة **"صبورة المحروسة"** التابعة لجمعية **صناع الحياة بمحافظة القليوبية**. تهدف المنصة لتمكين المتطوعين من تسجيل جولاتهم الميدانية لتعليق اللوحات الخيرية وتتبع الإحصائيات المركزية وجدول الصدارة بين المراكز.
 
 A comprehensive digital management platform for the **"Saboura El Mahrousa"** charity board placement initiative by **Life Makers Egypt - Qalyubia**. This portal tracks volunteer street visits, board installation counts, center scoreboard rankings, and automates notifications.
